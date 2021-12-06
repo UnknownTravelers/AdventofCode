@@ -37,10 +37,10 @@ for x in range(0, w):
             print(x, y, grid[x][y])
             cross += 1
 
-with open('out.txt', 'w') as fd:
-    for x in range(0, w):
-        for y in range(0, h):
-            fd.write(str(grid[x][y]))
-        fd.write("\n")
+# with open('out.txt', 'w') as fd:
+    # for x in range(0, w):
+        # for y in range(0, h):
+            # fd.write(str(grid[x][y]))
+        # fd.write("\n")
 
 print(cross)
