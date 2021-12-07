@@ -1,4 +1,5 @@
 from statistics import mean
+from math import floor, ceil
 
 file_data = []
 
@@ -7,8 +8,13 @@ with open("file.txt", 'r') as lines:
         file_data = [int(s) for s in line.split(',') if s.isdigit()]
 
 # resolve for mean
-# target = round(mean(file_data))
-# print(target)
+target = mean(file_data)
+print(target)
+
+if target % 1 != 0:
+    target = [floor(target), ceil(target)]
+else:
+    target = [target]
 
 def grow_add(n):
     out = 0
@@ -18,7 +24,7 @@ def grow_add(n):
 
 total_cons = []
 
-for t in range(min(file_data), max(file_data)+1):
+for t in target:
     c = 0
     for p in file_data:
         c += grow_add(abs(p-t))
